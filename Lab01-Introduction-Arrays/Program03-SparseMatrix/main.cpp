@@ -1,3 +1,69 @@
 #include <iostream>
+
 using namespace std;
-int main(){const int M=20;int a[M][M],t[M*M+1][3],r,c,k=1;cout<<"Rows columns: ";if(!(cin>>r>>c)||r<1||r>M||c<1||c>M)return 1;for(int i=0;i<r;i++)for(int j=0;j<c;j++){if(!(cin>>a[i][j]))return 1;if(a[i][j]!=0){t[k][0]=i;t[k][1]=j;t[k][2]=a[i][j];k++;}}t[0][0]=r;t[0][1]=c;t[0][2]=k-1;cout<<"Triplet (row column value):\n";for(int i=0;i<k;i++)cout<<t[i][0]<<" "<<t[i][1]<<" "<<t[i][2]<<"\n";cout<<"Transpose:\n"<<c<<" "<<r<<" "<<k-1<<"\n";for(int j=0;j<c;j++)for(int i=1;i<k;i++)if(t[i][1]==j)cout<<t[i][1]<<" "<<t[i][0]<<" "<<t[i][2]<<"\n";return 0;}
+
+int main() {
+    const int MAX = 20;
+
+    int matrix[MAX][MAX];
+    int triplet[MAX * MAX + 1][3];
+
+    int rows, cols;
+    int count = 1;
+
+    cout << "Enter number of rows and columns: ";
+    if (!(cin >> rows >> cols) ||
+        rows < 1 || rows > MAX || cols < 1 || cols > MAX) {
+        cout << "Invalid matrix dimensions.\n";
+        return 1;
+    }
+
+    cout << "Enter matrix elements:\n";
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            if (!(cin >> matrix[i][j])) {
+                cout << "Invalid input.\n";
+                return 1;
+            }
+
+            // Store only non-zero elements.
+            if (matrix[i][j] != 0) {
+                triplet[count][0] = i;
+                triplet[count][1] = j;
+                triplet[count][2] = matrix[i][j];
+                count++;
+            }
+        }
+    }
+
+    // Store rows, columns and number of non-zero elements.
+    triplet[0][0] = rows;
+    triplet[0][1] = cols;
+    triplet[0][2] = count - 1;
+
+    cout << "\nSparse Matrix in Triplet Representation:\n";
+    cout << "Row\tColumn\tValue\n";
+
+    for (int i = 0; i < count; i++) {
+        cout << triplet[i][0] << "\t"
+             << triplet[i][1] << "\t"
+             << triplet[i][2] << "\n";
+    }
+
+    cout << "\nTranspose in Triplet Representation:\n";
+    cout << "Row\tColumn\tValue\n";
+    cout << cols << "\t" << rows << "\t" << count - 1 << "\n";
+
+    for (int column = 0; column < cols; column++) {
+        for (int i = 1; i < count; i++) {
+            if (triplet[i][1] == column) {
+                cout << triplet[i][1] << "\t"
+                     << triplet[i][0] << "\t"
+                     << triplet[i][2] << "\n";
+            }
+        }
+    }
+
+    return 0;
+}
