@@ -1,35 +1,6 @@
 #include <iostream>
-#include <vector>
 using namespace std;
-
-void merge(vector<int>& a, int left, int mid, int right) {
-    vector<int> temp;
-    int i = left, j = mid + 1;
-    while (i <= mid && j <= right) {
-        if (a[i] <= a[j]) temp.push_back(a[i++]);
-        else temp.push_back(a[j++]);
-    }
-    while (i <= mid) temp.push_back(a[i++]);
-    while (j <= right) temp.push_back(a[j++]);
-    for (int k = 0; k < (int)temp.size(); ++k) a[left + k] = temp[k];
-}
-void mergeSort(vector<int>& a, int left, int right) {
-    if (left >= right) return;
-    int mid = left + (right - left) / 2;
-    mergeSort(a, left, mid);
-    mergeSort(a, mid + 1, right);
-    merge(a, left, mid, right);
-}
-int main() {
-    int n;
-    cout << "Enter number of elements: ";
-    if (!(cin >> n) || n < 0 || n > 100000) { cerr << "Invalid size.\n"; return 1; }
-    vector<int> a(n);
-    cout << "Enter elements: ";
-    for (int& x : a) if (!(cin >> x)) { cerr << "Invalid input.\n"; return 1; }
-    if (!a.empty()) mergeSort(a, 0, n - 1);
-    cout << "Sorted array: ";
-    for (int x : a) cout << x << ' ';
-    cout << '\n';
-    return 0;
-}
+const int M=1000;
+void merge(int a[],int l,int m,int r){int t[M],i=l,j=m+1,k=0;while(i<=m&&j<=r)t[k++]=(a[i]<=a[j]?a[i++]:a[j++]);while(i<=m)t[k++]=a[i++];while(j<=r)t[k++]=a[j++];for(int x=0;x<k;x++)a[l+x]=t[x];}
+void ms(int a[],int l,int r){if(l>=r)return;int m=l+(r-l)/2;ms(a,l,m);ms(a,m+1,r);merge(a,l,m,r);}
+int main(){int a[M],n;if(!(cin>>n)||n<0||n>M)return 1;for(int i=0;i<n;i++)if(!(cin>>a[i]))return 1;if(n)ms(a,0,n-1);for(int i=0;i<n;i++)cout<<a[i]<<" ";cout<<"\n";}
