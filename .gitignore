@@ -1,0 +1,11 @@
+# Compiled binaries
+*.exe
+*.out
+a.out
+*.o
+*.obj
+
+# IDE/editor
+.vscode/
+.idea/
+.DS_Store
