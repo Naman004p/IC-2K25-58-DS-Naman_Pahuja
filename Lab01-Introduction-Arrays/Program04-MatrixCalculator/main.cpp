@@ -1,6 +1,8 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <stdexcept>
 using namespace std;
 using Matrix = vector<vector<double>>;
 
