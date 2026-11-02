@@ -9,17 +9,8 @@
 3. **Insertion Sort** – insert each element into its correct position in the sorted prefix.
 4. **Merge Sort** – divide the array, recursively sort both halves, and merge them.
 
-## Build and run
-```bash
-g++ -std=c++17 main.cpp -o sorting
-./sorting
-```
-Run this command from the selected program folder.
-
 ## Learning outcomes
 - Understand comparison-based sorting.
 - Trace sorting passes and recursive divide-and-conquer.
 - Compare time and auxiliary-space complexity.
 - Verify sorting output on arbitrary integer input.
-
-The syllabus also lists Quick Sort, Heap Sort, Radix Sort, Binary Search, and empirical timing analysis; those are not added here because the repository progression on page 2 specifies four Lab02 program folders and this submission is restricted to those four.
