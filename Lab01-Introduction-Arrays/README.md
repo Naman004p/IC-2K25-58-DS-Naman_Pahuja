@@ -1,7 +1,8 @@
 # Lab01 – Introduction to Arrays
 
 **Course:** IC-307D Data Structures and Algorithms Lab  
-**Student:** Naman Pahuja | **Roll No.:** IC2K2558
+**Student:** Naman Pahuja
+**Roll No.:** IC2K2558
 
 ## Programs
 1. **Program01 – Array Operations:** insertion, deletion, search, and left/right rotation on a 1D array.
