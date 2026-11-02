@@ -9,18 +9,8 @@
 3. **Program03 – Sparse Matrix:** triple representation, display, transpose, and addition.
 4. **Program04 – Matrix Calculator:** menu-driven addition, multiplication, transpose, and determinant for square matrices up to order 10.
 
-## Build and run
-Compile any source file with:
-```bash
-g++ -std=c++17 Program01-ArrayOperations/main.cpp -o array_ops
-./array_ops
-```
-Change the source path and output name for the other programs.
-
 ## Learning outcomes
 - Understand contiguous array storage and index-based access.
 - Perform insertion, deletion, searching, and rotation while preserving valid bounds.
 - Represent matrices efficiently with triplets when most entries are zero.
 - Apply matrix operations and reason about their computational costs.
-
-See each program folder for its algorithm, pseudocode, dry run, complexity, sample I/O, and application.
