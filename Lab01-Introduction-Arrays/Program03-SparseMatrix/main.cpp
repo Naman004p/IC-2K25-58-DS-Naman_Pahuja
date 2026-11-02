@@ -1,5 +1,7 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
+#include <stdexcept>
 using namespace std;
 
 struct Term { int row, col, value; };
