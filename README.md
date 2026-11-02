@@ -4,7 +4,6 @@
 **Roll No.:** IC2K2558  
 **Repository:** DS-ASSIGNMENTS
 
-This repository contains the completed practical work for **Lab01** and **Lab02** only.
 
 ## Labs
 - [Lab01 – Introduction to Arrays](./Lab01-Introduction-Arrays/README.md)
